@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Basic outline for HTML pages
 -->
 <html>
     <head>
@@ -10,8 +8,11 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        <div class="nav">
+            <!--jQuery logout and home button-->
+        </div>
+        <div class ="content">
+            <!--all other content and divs go here-->
+        </div>
     </body>
 </html>

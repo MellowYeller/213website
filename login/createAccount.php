@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <!--
-Mitchell Vivian 300202471
-Daniel Strauch 
+Basic outline for HTML pages
 -->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Login</title>
-        <link rel="stylesheet" href="style.css">
+        <title>Account Creation</title>
+        <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT']."/213Final/lib/navBar.php"; ?>
         <div class ="content">
-            <h1>Create-A-Character</h1>
+            <h1>Account Creation</h1>
             <fieldset>
-                <legend><h2>Login</h2></legend>
-                <form action="login/login.php" method="POST">
+                <legend><h2>New User</h2></legend>
+                <form action="" method="POST">
+                    <label for="username">User Name:</label>
+                    <br>
+                    <input type="text" name="username" id="username" required>
+                    <br><br>
                     <label for="email">Email:</label>
                     <br>
                     <input type="text" name="email" id="email" required>
@@ -27,13 +30,11 @@ Daniel Strauch
                     <input type="submit" value="Submit">
                 </form>
             </fieldset>
-            <br>
-            <a href="login/createAccount.php">Create Account</a>
         </div>
         <!--import jQuery-->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <!--This is the JS file that will be used on every page-->
-        <script src="/main.js"></script>
+        <script src="../main.js"></script>
         <!--Add additional JS files below.-->
     </body>
 </html>

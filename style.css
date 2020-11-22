@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 21, 2020, 9:58:27 PM
+    Author     : Mitchell Vivian, Daniel Strauch
+*/
+.nav {
+    
+}
+
+.content {
+    display: grid;
+    width: 500px;
+    margin: auto;
+    justify-self: center;
+}

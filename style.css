@@ -7,6 +7,17 @@ and open the template in the editor.
     Created on : Nov 21, 2020, 9:58:27 PM
     Author     : Mitchell Vivian, Daniel Strauch
 */
+@import url('https://fonts.googleapis.com/css2?family=Texturina&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+* {
+    font-family: 'Kaushan Script', cursive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Texturina', serif;
+}
+
 .nav {
     
 }

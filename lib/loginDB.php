@@ -6,5 +6,5 @@
 
 $usernameDB = 'cs213user';
 $passwordDB = 'letmein';
-$databaseDB = '213Final';
+$databaseDB = '213temp';
 $hostDB = 'localhost';

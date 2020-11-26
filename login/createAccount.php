@@ -22,15 +22,15 @@ if (!$targetemail) {
                 <form action="" method="POST">
                     <label for="username">User Name:</label>
                     <br>
-                    <input type="text" name="username" id="username" required>
+                    <input class="text-field" type="text" name="username" id="username" required>
                     <br><br>
                     <label for="email">Email:</label>
                     <br>
-                    <input type="text" name="email" id="email" required>
+                    <input class="text-field" type="text" name="email" id="email" required>
                     <br><br>
                     <label for="password">Password:</label>
                     <br>
-                    <input type="password" name="password" id="password" required>
+                    <input class="text-field" type="password" name="password" id="password" required>
                     <br><br>
                     <input type="submit" value="Submit">
                 </form>

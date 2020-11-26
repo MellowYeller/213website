@@ -7,6 +7,7 @@ $targetcharname = filter_input(INPUT_POST, 'name');
 $targetstr = filter_input(INPUT_POST, 'str');
 $targetagi = filter_input(INPUT_POST, 'agi');
 $targetint = filter_input(INPUT_POST, 'inte');
+$zero = 0;
 
 $mysqli = mysqli_connect($hostDB, $usernameDB, $passwordDB, $databaseDB);
 
@@ -18,7 +19,7 @@ $query = "INSERT INTO Characters VALUES(?,?,?,?,?,?,?)";
 if (!$stmt = $mysqli->prepare($query)) {
     echo "Prepare failed (" . $mysqli->errno . ") " . $mysqli->error . "\n";
 }
-if (!($stmt->bind_param("ssiiiii", $targetuser, $targetcharname, $targetstr, $targetagi, $targetint, 0, 0))) {
+if (!($stmt->bind_param("ssiiiii", $targetuser, $targetcharname, $targetstr, $targetagi, $targetint, $zero, $zero))) {
     echo "Binding parameters failed: (" . $stmt->errno . ") "
     . $stmt->error . "\n";
 }

@@ -39,14 +39,14 @@ if (!$stmt->execute()) {
     exit;
 } else { 
     $res = $stmt->get_result();
-    if ($res->num_rows() === 1) {
-        $row = $res->fetch_assoc();
+    $row = $res->fetch_assoc();
+    if (!is_null($row)) {
         session_start();
         setcookie("auth", session_id(), time() + 60 * 30, "/", "", 0);
-        $_SESSION['username'] = $row['username'];
+        $_SESSION["username"] = $row["username"];
         header('Location: ../characters/select.php');
     } else {
-        header("Location: ../index.html");
+        header("Location: ../index.php");
         exit;
     }
 }

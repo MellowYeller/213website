@@ -2,7 +2,7 @@
 session_start();
 include "../lib/loginDB.php";
 
-$targetuser = "test";//(filter_input(INPUT_SESSION, 'username'));
+$targetuser = $_SESSION["username"];
 $targetcharname = filter_input(INPUT_POST, 'name');
 $targetstr = filter_input(INPUT_POST, 'str');
 $targetagi = filter_input(INPUT_POST, 'agi');

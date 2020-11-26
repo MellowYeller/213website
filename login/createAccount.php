@@ -1,4 +1,8 @@
 <?php
+/*
+ * TODO: back button upon account creation
+ */
+
 
 $targetemail = strtolower(filter_input(INPUT_POST, 'email'));
 $targetusername = filter_input(INPUT_POST, 'username');
@@ -54,12 +58,12 @@ if (!$targetemail) {
         $message .= "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " 
                 . $mysqli->connect_error . "\n";
     }
-    $query = "INSERT INTO users VALUES("
-            . "?, ?, SHA1(?)";
+    $query = "INSERT INTO Users VALUES("
+            . "?, SHA1(?), ?)";
     if (!$stmt = $mysqli->prepare($query)) {
         $message .= "Prepare failed (" . $mysqli->errno . ") " . $mysqli->error . "\n";
     }
-    if (!($stmt->bind_param("sss", $targetemail, $targetusername, $password))) {
+    if (!($stmt->bind_param("sss", $targetusername, $password, $targetemail))) {
         $message .= "Binding parameters failed: (" . $stmt->errno . ") " 
              . $stmt->error . "\n";
     }

@@ -23,7 +23,7 @@ if ($mysqli->connect_errno) {
             . $mysqli->connect_error . "\n";
 }
 $query = "SELECT email, username, password "
-       . "FROM users "
+       . "FROM Users "
        . "WHERE email = ? AND"
        . "      password = SHA1(?)";
 if (!$stmt = $mysqli->prepare($query)) {

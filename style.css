@@ -17,6 +17,9 @@ and open the template in the editor.
 body {
     padding: 0px;
     margin: 0px;
+    font-size-adjust: .65;
+    background-image: url("./lib/background.jpeg");
+    background-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,9 +28,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .content {
     display: grid;
-    width: 500px;
+    max-width: 800px;
     margin: auto;
     justify-self: center;
+    background-image: none;
+    background-color: white;
+    padding: 10px;
+    opacity: 0.75;
 }
 .nav {
     background-color: black;

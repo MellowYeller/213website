@@ -12,6 +12,15 @@
             <file>file:/var/www/html/213Final/index.php</file>
             <file>file:/var/www/html/213Final/login/login.php</file>
             <file>file:/var/www/html/213Final/lib/loginDB.php</file>
+<<<<<<< HEAD
+=======
+            <file>file:/var/www/html/213Final/login/createAccount.php</file>
+            <file>file:/var/www/html/213Final/style.css</file>
+        </group>
+        <group>
+            <file>file:/var/www/html/213Final/characters/createChar.php</file>
+            <file>file:/var/www/html/213Final/characters/getChar.php</file>
+>>>>>>> 037b33e39daad9e4e9c45a69132c68ec579bb89b
             <file>file:/var/www/html/213Final/characters/char_ajax.js</file>
             <file>file:/var/www/html/213Final/lib/navBar.php</file>
             <file>file:/var/www/html/213Final/login/createAccount.php</file>

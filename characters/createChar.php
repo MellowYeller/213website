@@ -1,7 +1,7 @@
 <?php
+
 session_start();
 include "../lib/loginDB.php";
-
 $targetuser = $_SESSION["username"];
 $targetcharname = filter_input(INPUT_POST, 'name');
 $targetstr = filter_input(INPUT_POST, 'str');
@@ -24,7 +24,11 @@ if (!($stmt->bind_param("ssiiiii", $targetuser, $targetcharname, $targetstr, $ta
     . $stmt->error . "\n";
 }
 if (!$stmt->execute()) {
-    echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error . "\n";
+    if ($stmt->errno === 1062) {
+        echo "This name is already taken. Try a different name.";
+    } else {
+        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error . "\n";
+    }
 } else {
     echo 'Character is created sucessfully';
 }

@@ -8,7 +8,7 @@ session_start();
         <title>Select or Create</title>
         <link rel="stylesheet" href="../style.css">
     </head>
-    <body>
+    <body onload="getChar(); return false">
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/213Final/lib/navBar.php"; ?>
         <div class ="content">
             <!--all other content and divs go here-->
@@ -16,6 +16,14 @@ session_start();
             <div class="select-character">
                 <fieldset>
                     <legend><h2>Select Existing Character</h2></legend>
+                    <div id="dropdown">
+                        <form name="select" method="post" onsubmit="return checkChar();" action="loadout.php">
+                            <select name="exisChar" id="exisChar" class="text-field">   
+                            </select>
+                            <br><br>
+                            <input type="submit" value="Load Character">
+                        </form>
+                    </div>
                 </fieldset>
             </div> <!--select-character-->
             <div class="create-character">
@@ -25,21 +33,21 @@ session_start();
                         <table>
                             <tr>
                                 <td>Character Name: </td>
-                                <td><input type="text" id="charname" required></td>
+                                <td><input type="text" id="charname" class="text-field" required></td>
                             </tr>
                             <tr>
                                 <td>Strength(0-10): </td>
-                                <td><input type="number" id="strength" value="0" min="0" max="10"></td>
+                                <td><input type="number" id="strength" class="text-field" value="0" min="0" max="10"></td>
                             </tr>
                             <tr>
                                 <td> Agility(0-10): </td>
-                                <td><input type="number" id="agility" value="0" min="0" max="10"></td>
+                                <td><input type="number" id="agility" class="text-field" value="0" min="0" max="10"></td>
                             </tr>
                             <tr>
                                 <td>Intelligence(0-10): </td>
-                                <td><input type="number" id="intelligence" value="0" min="0" max="10"></td>
+                                <td><input type="number" id="intelligence" class="text-field" value="0" min="0" max="10"></td>
                             </tr>
-                        </table>
+                        </table><br>
                         <input type="submit" value="Create Character">
                     </form>
                     <div id="createresponse"></div>

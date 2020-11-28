@@ -11,6 +11,7 @@
         </group>
         <group>
             <file>file:/var/www/html/213Final/characters/createChar.php</file>
+            <file>file:/var/www/html/213Final/characters/getChar.php</file>
             <file>file:/var/www/html/213Final/characters/char_ajax.js</file>
             <file>file:/var/www/html/213Final/characters/select.php</file>
         </group>

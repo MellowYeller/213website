@@ -3,6 +3,13 @@
 Mitchell Vivian 300202471
 Daniel Strauch 
 -->
+<?php
+$message = "";
+$invalidLogin = filter_input(INPUT_GET, 'invalid');
+if ($invalidLogin) {
+    $message = "Email/password combination not found.\nPlease try again or make a new account.";
+}
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -23,7 +30,7 @@ Daniel Strauch
                     <label for="password">Password:</label>
                     <br>
                     <input class="text-field" type="password" name="password" id="password" required>
-                    <br><br>
+                    <br><div class="error-text"><?php echo nl2br($message); ?></div><br>
                     <input type="submit" value="Submit">
                 </form>
             </fieldset>
@@ -35,5 +42,6 @@ Daniel Strauch
         <!--This is the JS file that will be used on every page-->
         <script src="/main.js"></script>
         <!--Add additional JS files below.-->
+        <script src="index.js"></script>
     </body>
 </html>

@@ -33,6 +33,7 @@ if (!($stmt->bind_param("ss", $targetemail, $targetpasswd))) {
     echo "Binding parameters failed: (" . $stmt->errno . ") " 
          . $stmt->error . "\n";
 }
+
 if (!$stmt->execute()) {
     echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error . "\n";
     header("Location: ../index.html");
@@ -46,7 +47,7 @@ if (!$stmt->execute()) {
         $_SESSION["username"] = $row["username"];
         header('Location: ../characters/select.php');
     } else {
-        header("Location: ../index.php");
+        header("Location: ../index.php?invalid=true");
         exit;
     }
 }

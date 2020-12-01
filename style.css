@@ -42,14 +42,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1%;
     margin-bottom: 1%;
 }
-.nav {
+.nav, .menu{
     background-color: black;
     color: white;
     margin: 0px;
     padding: 0px;
 }
-.nav p {
+.nav p, .menu p{
     margin: 0px;
+    width: 100px;
+}
+
+.menu{
+    width: 100px;
 }
 
 .text-field {

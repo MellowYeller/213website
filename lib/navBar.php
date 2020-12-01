@@ -8,3 +8,7 @@
 <div class="nav">
     <p>Menu</p>
 </div>
+<div class="menu" hidden>
+    <p id="back">Back</p>
+    <p id="logout">Logout</p>
+</div>

@@ -40,7 +40,7 @@ if ($invalidLogin) {
         <!--import jQuery-->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <!--This is the JS file that will be used on every page-->
-        <script src="/main.js"></script>
+        <script src="main.js"></script>
         <!--Add additional JS files below.-->
         <script src="index.js"></script>
     </body>

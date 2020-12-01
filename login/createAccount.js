@@ -11,12 +11,13 @@ function createAccount() {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4) {
+            console.log(this.getResponseHeader("Status"));
+            //console.log(response.status)
             if (this.status === 200) {
                 document.getElementById('error-text').innerHTML = this.responseText;
             }
             else if (this.status === 303) {
-                location=`${this.getResponseHeader('Location')}`;
-                location.reload(true);
+                window.location.replace(`${this.getResponseHeader('Redirect')}`);
             }
         }
     };

@@ -4,7 +4,8 @@ Basic outline for HTML pages
 -->
 <?php 
 session_start();
- $character = filter_input(INPUT_POST, 'exisChar');
+$_SESSION ['character'] = filter_input(INPUT_POST, 'exisChar');
+$character = filter_input(INPUT_POST, 'exisChar');
 ?>
 <html>
     <head>
@@ -12,7 +13,7 @@ session_start();
         <title>Loadout</title>
         <link rel="stylesheet" href="../style.css">
     </head>
-    <body onload="getWeapons(); getArmor(); return false">
+    <body onload="getWeapons(); getArmor(); getChar(); return false">
         <?php include $_SERVER['DOCUMENT_ROOT']."/213Final/lib/navBar.php"; ?>
         <div class ="content">
             <!--all other content and divs go here-->
@@ -20,6 +21,8 @@ session_start();
             <div class="loadout-creation">
                 <fieldset>
                     <legend><h2>Loadout</h2></legend>
+                    <p>Base Stats Stats:</p>
+                    <div id="stats"></div>
                     <form method="POST" action="">
                         <p>
                         <label for='weapons'>Weapon: </label>

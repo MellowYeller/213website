@@ -18,7 +18,7 @@ session_destroy();
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
-        <?php include $_SERVER['DOCUMENT_ROOT']."/213Final/lib/navBar.php"; ?>
+        <div class="nav"><p></p></div>
         <div class ="content">
             <h1>Logout Successful</h1>
             <fieldset>

@@ -43,7 +43,7 @@ if (!$stmt->execute()) {
     $row = $res->fetch_assoc();
     if (!is_null($row)) {
         session_start();
-        setcookie("auth", session_id(), time() + 60 * 30, "/", "", 0);
+        setcookie("auth", session_id());
         $_SESSION["username"] = $row["username"];
         header('Location: ../characters/select.php');
     } else {

@@ -17,7 +17,7 @@ session_start();
                 <fieldset>
                     <legend><h2>Select Existing Character</h2></legend>
                     <div id="dropdown">
-                        <form name="select" method="post" onsubmit="return checkChar();" action="loadout.php">
+                        <form name="select" method="post" onsubmit="return checkChar();" action="../loadout/loadout.php">
                             <select name="exisChar" id="exisChar" class="text-field">   
                             </select>
                             <br><br>

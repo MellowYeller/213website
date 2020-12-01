@@ -23,11 +23,11 @@ if (!$targetemail) {
             <h1>Account Creation</h1>
             <fieldset>
                 <legend><h2>New User</h2></legend>
-                <form action="" method="POST">
+                <form action="#" onsubmit="createAccount(); return false">
                     <label for="username">User Name:</label>
                     <br>
                     <input class="text-field" type="text" name="username" id="username" required>
-                    <br><br>
+                    <br><div class="error-text" id="error-text"></div><br>
                     <label for="email">Email:</label>
                     <br>
                     <input class="text-field" type="text" name="email" id="email" required>
@@ -44,6 +44,7 @@ if (!$targetemail) {
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <!--This is the JS file that will be used on every page-->
         <script src="../main.js"></script>
+        <script src="createAccount.js"></script>
         <!--Add additional JS files below.-->
     </body>
 </html>
@@ -55,24 +56,32 @@ if (!$targetemail) {
 
     $message = "";
     if ($mysqli->connect_errno) {
-        $message .= "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " 
+        echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " 
                 . $mysqli->connect_error . "\n";
     }
     $query = "INSERT INTO Users VALUES("
             . "?, SHA1(?), ?)";
     if (!$stmt = $mysqli->prepare($query)) {
-        $message .= "Prepare failed (" . $mysqli->errno . ") " . $mysqli->error . "\n";
+        echo "Prepare failed (" . $mysqli->errno . ") " . $mysqli->error . "\n";
     }
     if (!($stmt->bind_param("sss", $targetusername, $password, $targetemail))) {
-        $message .= "Binding parameters failed: (" . $stmt->errno . ") " 
+        echo  "Binding parameters failed: (" . $stmt->errno . ") " 
              . $stmt->error . "\n";
     }
-    if (!$stmt->execute()) {
-        $message .= "Execute failed: (" . $stmt->errno . ") " . $stmt->error . "\n";
+    if (!$stmt->execute()) {    
+        if ($stmt->errno === 1062) {
+            echo "This username or email is already taken.";
+        } else {
+            echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error . "\n";
+        }
+        exit;
     } else {
         $message = nl2br("Account successfully created!\n\n"
                 . "Email: $targetemail\n"
                 . "Username: $targetusername");
+        header($_SERVER["SERVER_PROTOCOL"]." 303 See Other");
+        header("Location: createSuccess.php?email=$targetemail&username=$targetusername");
+        exit;
     }
 ?>
 <!DOCTYPE html>

@@ -19,7 +19,10 @@ if (!$stmt->execute()) {
     $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) {
         $name = $row['Name'];
-        echo "<option value='$name' class='text-field'>$name</option>";
+        $str = $row['Strength'];
+        $agi = $row['Agility'];
+        $int = $row['Intelligence'];
+        echo "<option value='$name' class='text-field'>$name $str/$agi/$int</option>";
     }
 }
 ?>

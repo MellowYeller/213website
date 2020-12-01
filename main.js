@@ -15,4 +15,10 @@ $('document').ready(() => {
     $('#logout').on('click', () => {
         window.location.replace("../login/logout.php");
     });
+    $('.menu').children().on('mouseenter', event => {
+        $(event.currentTarget).addClass('selected');
+    });
+    $('.menu').children().on('mouseleave', event => {
+        $(event.currentTarget).removeClass('selected');
+    });
 });

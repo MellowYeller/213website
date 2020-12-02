@@ -55,10 +55,6 @@ function calcStats() {
     xhttp.send();
 }
 
-function testFunc() {
-    console.log('hello');
-}
-
 function listener() {
     console.log('hello listener');
     $('select').on('change', () => {

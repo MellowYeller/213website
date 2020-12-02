@@ -17,7 +17,7 @@ $character = filter_input(INPUT_POST, 'exisChar');
         <title>Loadout</title>
         <link rel="stylesheet" href="../style.css">
     </head>
-    <body onload="getWeapons(); getArmor(); getChar(); return false">
+    <body onload="getWeapons(); getArmor(); getChar(); listener(); return false">
         <?php include $_SERVER['DOCUMENT_ROOT']."/213Final/lib/navBar.php"; ?>
         <div class ="content">
             <!--all other content and divs go here-->
@@ -25,7 +25,7 @@ $character = filter_input(INPUT_POST, 'exisChar');
             <div class="loadout-creation">
                 <fieldset>
                     <legend><h2>Loadout</h2></legend>
-                    <p>Character Base Stats:</p>
+                    <h3>Character Base Stats:</h3>
                     <div id="stats"></div>
                     <form method="POST" action="">
                         <p>
@@ -39,6 +39,8 @@ $character = filter_input(INPUT_POST, 'exisChar');
                         </select>        
                         </p>
                     </form>
+                    <div id="error-text" class="error-text"></div>
+                    <div id="total-stats" class="total-stats"></div>
                 </fieldset>
             </div> <!--loadout-creation-->
         </div>

@@ -25,7 +25,7 @@ $character = filter_input(INPUT_POST, 'exisChar');
             <div class="loadout-creation">
                 <fieldset>
                     <legend><h2>Loadout</h2></legend>
-                    <h3>Character Base Stats:</h3>
+                    <h3><?php echo $character; ?> Base Stats:</h3>
                     <div id="stats"></div>
                     <form method="POST" action="">
                         <p>

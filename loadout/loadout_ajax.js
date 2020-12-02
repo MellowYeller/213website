@@ -56,7 +56,6 @@ function calcStats() {
 }
 
 function listener() {
-    console.log('hello listener');
     $('select').on('change', () => {
         updateLoadout();
         calcStats();

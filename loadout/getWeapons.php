@@ -23,7 +23,7 @@ if (!$stmt->execute()) {
         $str = $row['Strength'];
         $agi = $row['Agility'];
         $int = $row['Intelligence'];
-        echo "<option value='$id' class='text-field'>$name $str/$agi/$int</option>";
+        echo "<option value='$id' class='text-field'>$name str: $str agi: $agi int: $int</option>";
     }
 }
 ?>

@@ -2,7 +2,7 @@
 <!--
 Basic outline for HTML pages
 -->
-<?php 
+<?php
 session_start();
 if (!filter_input(INPUT_COOKIE, 'PHPSESSID') == session_id()) {
     header("Location: ../index.php");
@@ -18,7 +18,7 @@ $character = filter_input(INPUT_POST, 'exisChar');
         <link rel="stylesheet" href="../style.css">
     </head>
     <body onload="getWeapons(); getArmor(); getChar(); return false">
-        <?php include $_SERVER['DOCUMENT_ROOT']."/213Final/lib/navBar.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/213Final/lib/navBar.php"; ?>
         <div class ="content">
             <!--all other content and divs go here-->
             <?php echo "<h1>Create a Loadout for $character</h1>"; ?>
@@ -27,16 +27,17 @@ $character = filter_input(INPUT_POST, 'exisChar');
                     <legend><h2>Loadout</h2></legend>
                     <p>Character Base Stats:</p>
                     <div id="stats"></div>
+
                     <form method="POST" action="">
                         <p>
-                        <label for='weapons'>Weapon: </label>
-                        <select name="weapons" id="weapons" class="text-field">
-                        </select>
+                            <label for='weapons'>Weapon: </label>
+                            <select name="weapons" id="weapons" class="text-field">
+                            </select>
                         </p>
                         <p>
-                        <label for='armor'>Armor: </label>
-                        <select name="armor" id="armor" class="text-field">    
-                        </select>        
+                            <label for='armor'>Armor: </label>
+                            <select name="armor" id="armor" class="text-field">
+                            </select>     
                         </p>
                     </form>
                 </fieldset>

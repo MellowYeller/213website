@@ -25,7 +25,7 @@ if ($invalidLogin) {
                 <form action="login/login.php" method="POST">
                     <label for="email">Email:</label>
                     <br>
-                    <input class="text-field" type="text" name="email" id="email" required>
+                    <input class="text-field" type="email" name="email" id="email" required>
                     <br><br>
                     <label for="password">Password:</label>
                     <br>

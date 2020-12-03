@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 session_start();
-setcookie("auth", "");
+setcookie("auth", "", time() + 60 * 30, "/", "", 0);
 session_destroy();
 
 ?>

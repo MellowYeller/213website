@@ -4,7 +4,7 @@ Basic outline for HTML pages
 -->
 <?php
 session_start();
-if (!filter_input(INPUT_COOKIE, 'PHPSESSID') == session_id()) {
+if (!filter_input(INPUT_COOKIE, 'auth') == session_id()) {
     header("Location: ../index.php");
     exit;
 }

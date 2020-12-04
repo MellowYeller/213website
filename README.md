@@ -1,7 +1,7 @@
 # 213 Final Project
 
 Mitchell Vivian 300202471
-Daniel Strauch
+Daniel Strauch 300206805
 
 ### Working features
 
@@ -15,8 +15,9 @@ Daniel Strauch
 - Prepared statements with mysqli
 - JOIN operation on multiple tables of MySQL database
 - Custom HTTP status codes
-- AJAX operations
-- jQuery
+- JavaScript
+  - AJAX operations
+  - jQuery
 - Styling with CSS
 
 
